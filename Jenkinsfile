@@ -6,7 +6,14 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building Employee Management Application'
-                sh 'mvn clean package'
+                sh 'mvn clean package -DskipTests'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Running Application Tests'
+                sh 'mvn test'
             }
         }
 
