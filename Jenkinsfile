@@ -6,7 +6,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building Employee Management Application'
-                sh './build.sh'
+                sh 'mvn clean package'
             }
         }
 
